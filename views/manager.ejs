@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bot Manager</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h2>Bot Manager</h2>
+  <h3>Admins</h3>
+  <ul>
+    <% admins.forEach(admin => { %>
+      <li><%= admin %></li>
+    <% }) %>
+  </ul>
+  <h3>All Users</h3>
+  <ul>
+    <% users.forEach(user => { %>
+      <li>
+        <%= user.name %> (ID: <%= user.id %>)
+        <% if (!user.admin) { %>
+          <form style="display:inline" method="POST" action="/manager/add-admin">
+            <input type="hidden" name="session" value="<%= session %>">
+            <input type="hidden" name="psid" value="<%= user.id %>">
+            <button type="submit">Make Admin</button>
+          </form>
+        <% } else { %>
+          <span>Admin</span>
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+  <h3>Feedback</h3>
+  <ul>
+    <% feedback.forEach(f => { %>
+      <li><%= f %></li>
+    <% }) %>
+  </ul>
+  <hr>
+  <a href="/">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Facebook Pagebot Runner</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Facebook Pagebot Runner</h1>
+  <% if (error) { %><div class="error"><%= error %></div><% } %>
+  <form method="POST" action="/setup">
+    <label>Facebook Page Access Token: <input name="accessToken" required></label><br>
+    <label>Facebook Verify Token: <input name="verifyToken" required></label><br>
+    <button type="submit">Start Bot</button>
+  </form>
+</body>
+</html>

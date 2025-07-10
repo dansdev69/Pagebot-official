@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Callback URL</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h2>Callback URL for Facebook Webhook</h2>
+  <input id="cburl" value="<%= callbackUrl %>" readonly size="60">
+  <button onclick="navigator.clipboard.writeText(document.getElementById('cburl').value);alert('Copied!')">Copy</button>
+  <hr>
+  <a href="/manager?session=<%= session %>">Continue to Bot Manager</a>
+</body>
+</html>
